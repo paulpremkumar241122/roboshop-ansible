@@ -6,9 +6,15 @@
     name: nodejs
     state: installed
 
-#app_pre_setup
+- name: App Pre_requisites
+  ansible.builtin.import_tasks:
+    file: app_pre_setup.yml
 
-#echo -e "${colour} Installing NodeJS Dependencies ${nocolour}"
-#npm install  &>>${log_file}
+- name: Load NodeJS Dependencies
+  ansible.builtin.shell: npm install
+  args:
+    chdir: /app
 
-#systemd_setup
+- name: SystemD Setup
+  ansible.builtin.import_tasks:
+    file: systemd_setup.yml
