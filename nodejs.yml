@@ -1,7 +1,7 @@
 - name: install nodejs
   ansible.builtin.yum:
     name: nodejs '18'
-    state: latest
+    state: installed
 
 #echo -e "${colour} Enable NodeJs 18v ${nocolour}"
 #dnf module disable nodejs -y  &>>${log_file}
