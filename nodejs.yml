@@ -1,6 +1,9 @@
-- name: install nodejs
+- name: Configuring Nodejs Repos
+  ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_lts.x | bash
+
+- name: Install Nodejs
   ansible.builtin.yum:
-    name: nodejs '18'
+    name: nodejs
     state: installed
 
 #echo -e "${colour} Enable NodeJs 18v ${nocolour}"
