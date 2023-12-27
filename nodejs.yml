@@ -1,6 +1,6 @@
 - name: install nodejs
   ansible.builtin.yum:
-    name: nodejs:18
+    name: nodejs 18
     state: latest
 
 #echo -e "${colour} Enable NodeJs 18v ${nocolour}"
