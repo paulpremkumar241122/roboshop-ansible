@@ -1,10 +1,7 @@
 - name: Configure Nodejs Repos
-
-- name: enable 18
   community.general.npm:
     name: nodejs
     version: '18'
-
 
 - name: install nodejs
   ansible.builtin.yum:
