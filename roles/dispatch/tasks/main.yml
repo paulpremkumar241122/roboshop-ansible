@@ -5,6 +5,7 @@
 
 - name: App Pre requisites
   ansible.builtin.import_tasks:
+    name: common
     file: app_pre_setup.yml
 
 - name: Download Dependencies
