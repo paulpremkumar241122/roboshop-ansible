@@ -1,0 +1,20 @@
+- name: Installing Golang
+  ansible.builtin.dnf:
+    name: golang
+    state: installed
+
+- name: App Pre requisites
+  ansible.builtin.import_tasks:
+    file: app_pre_setup.yml
+
+- name: Download Dependencies
+  ansible.builtin.shell: go mod init {{ component }} ; go get ; go build
+  args:
+    chdir: /app
+
+- name: Starting Dispatch Service
+  ansible.builtin.systemd:
+    name: dispatch
+    state: restarted
+    enabled: yes
+    daemon-reload: yes
