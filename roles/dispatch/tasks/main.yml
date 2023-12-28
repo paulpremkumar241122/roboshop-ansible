@@ -3,7 +3,7 @@
     name: golang
     state: installed
 
-- name: App Pre requisites
+ - name: App Pre requisites
   ansible.builtin.import_tasks:
     name: common
     file: app_pre_setup.yml
