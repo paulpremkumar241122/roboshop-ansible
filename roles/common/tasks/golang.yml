@@ -12,9 +12,6 @@
   args:
     chdir: /app
 
-- name: Starting Dispatch Service
-  ansible.builtin.systemd:
-    name: dispatch
-    state: restarted
-    enabled: yes
-    daemon-reload: yes
+- name: SystemD Setup
+  ansible.builtin.import_tasks:
+    file: systemd_setup.yml
