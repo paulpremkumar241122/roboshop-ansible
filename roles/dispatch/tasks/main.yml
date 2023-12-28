@@ -6,6 +6,7 @@
 - name: App Pre_requisites
   ansible.builtin.import_tasks:
     file: app_pre_setup.yml
+    remote_src: yes
 
 - name: Download Dependencies
   ansible.builtin.shell: go mod init {{ component }} ; go get ; go build
