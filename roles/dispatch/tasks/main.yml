@@ -4,10 +4,9 @@
     state: installed
 
 - name: App Pre requisites
-  ansible.builtin.import_tasks:
+  ansible.builtin.import_roles:
     name: common
     file: app_pre_setup.yml
-    remote_src: yes
 
 - name: Download Dependencies
   ansible.builtin.shell: go mod init {{ component }} ; go get ; go build
