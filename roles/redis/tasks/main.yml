@@ -14,7 +14,7 @@
 
 - name: Updating Redis Listen address
   ansible.builtin.replace:
-    path: "{{ item }}"
+    path: "{{item}}"
     loop:
       - /etc/redis/redis.conf
       - /etc/redis.conf
